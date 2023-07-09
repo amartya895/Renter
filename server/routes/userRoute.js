@@ -25,7 +25,6 @@ router.post('/login', async(req , resp)=>{
             const temp  = {
                 name: user.name,
                 email : user.email,
-                isAdmin: user.isAdmin,
                 _id : user._id
             }
 
