@@ -18,6 +18,7 @@ router.post("/registerhotel", async (req, resp) => {
     img3,
     maxcount,
     rentperday,
+    place,
   } = req.body;
 
   const newHotel = new Hotel({
@@ -28,8 +29,9 @@ router.post("/registerhotel", async (req, resp) => {
     rating: rating,
     services: [service1, service2, service3],
     images: [img1, img2, img3],
-    maxcount ,
-    rentperday,
+    maxcount : maxcount ,
+    rentperday : rentperday,
+    place : place,
   });
 
   try {
@@ -53,6 +55,23 @@ router.get('/getallhotels',async(req, resp)=>{
    }
   
 
+});
+router.post('/gethotelbyid' , async(req , resp)=>{
+
+  const hotelId = req.body.hotelid;
+  console.log(hotelId)
+
+  try {
+
+    const hotel = await Hotel.findOne({_id : hotelId});
+    console.log(hotel)
+    
+    return resp.send(hotel);
+
+    
+   } catch (error) {
+        console.log("something went wrong in finding hotel by id");
+   }
 })
 
 module.exports = router
