@@ -34,7 +34,8 @@ const hotelSchema = mongoose.Schema({
     place : {
         type : String,
         required : true,
-    }
+    },
+    currentbooking:[],
 },
 {
     timestamps:true
