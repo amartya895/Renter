@@ -46,7 +46,7 @@ const bookingSchema = mongoose.Schema({
     },
     status: {
         type: String,
-        default: 'booked',
+        default: 'BOOKED',
       },
 
 },{
