@@ -44,6 +44,10 @@ const bookingSchema = mongoose.Schema({
         type : String,
         required : true
     },
+    totaldays :{
+        type : String,
+        required : true,
+    },
     status: {
         type: String,
         default: 'BOOKED',
