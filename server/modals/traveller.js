@@ -9,6 +9,18 @@ const travellerSchmea = mongoose.Schema({
     type : String,
     required : true,
   },
+  travellerphone : {
+    type : String,
+    required : true,
+  },
+  travellergender : {
+    type : String,
+    required : true,
+  },
+  travellerdob : {
+    type : String,
+    required : true,
+  },
 },{
     timestamps: true,
 });
