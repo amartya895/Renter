@@ -1,4 +1,6 @@
 const express = require("express");
+const cors = require('cors');
+
 
 const usersRoute = require("../server/routes/userRoute");
 
@@ -13,6 +15,13 @@ const app = express();
 
 
 const port = process.env.PORT || 5000;
+
+app.use(cors({
+  origin: 'https://vercel.com', // Replace with your actual frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
 
 app.use(express.json());
 app.use("/api/travellers" , travellerRoute);
