@@ -13,7 +13,7 @@ function Hotels() {
     const fetchData = async () => {
       try {
         console.log("Trying to fetch data");
-        const data = (await axios.get("/api/hotels/getallhotels")).data;
+        const data = (await axios.get("https://renter-backend.onrender.com/api/hotels/getallhotels")).data;
         console.log("Data fetched successfully");
         console.log(data);
         setHotels(data);

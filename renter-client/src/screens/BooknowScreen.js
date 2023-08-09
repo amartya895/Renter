@@ -39,7 +39,7 @@ function BooknowScreen() {
         window.location.href = "/login";
       }
       try {
-        const { data } = await axios.post("/api/hotels/gethotelbyid", {
+        const { data } = await axios.post("https://renter-backend.onrender.com/api/hotels/gethotelbyid", {
           hotelid,
         });
         setHotel(data);
@@ -67,7 +67,7 @@ function BooknowScreen() {
     };
 
     try {
-      const bookingData = await axios.post("/api/bookings/bookhotel", bookDetail);
+      const bookingData = await axios.post("https://renter-backend.onrender.com/api/bookings/bookhotel", bookDetail);
       swal.fire('Congrulation' , 'Your Room Booked Successfully','success').then((result)=>{
         window.location.href = '/allbookings'
       });
