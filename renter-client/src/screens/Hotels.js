@@ -13,11 +13,7 @@ function Hotels() {
     const fetchData = async () => {
       try {
         console.log("Trying to fetch data");
-        const data = (
-          await axios.get(
-            "https://renter-backend.onrender.com/api/hotels/getallhotels"
-          )
-        ).data;
+        const data = (await axios.get("/api/hotels/getallhotels")).data;
         console.log("Data fetched successfully");
         console.log(data);
         setHotels(data);
@@ -47,7 +43,7 @@ function Hotels() {
     <div>
       <hr />
       <div className="searchHotel">
-        <h2>
+      <h2>
           {searchedHotels.length}+ stays in {place || "anywhere"} on date from{" "}
           {fromdate || "any"} to {todate || "any"}
         </h2>
@@ -74,10 +70,11 @@ function Hotels() {
             review={hotel.review}
             place={hotel.place}
             id={hotel._id}
-            fromdate={fromdate}
-            todate={todate}
+            fromdate = {fromdate}
+            todate = {todate}
           />
         ))}
+       
       </div>
     </div>
   );
