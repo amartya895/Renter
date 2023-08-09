@@ -15,10 +15,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use("/api/travellers" , travellerRoute);
-app.use("/api/users", usersRoute);
-app.use("/api/hotels",hotelsRoute);
-app.use("/api/bookings",bookingRoute);
+app.use("https://renter-backend.onrender.com/api/travellers" , travellerRoute);
+app.use("https://renter-backend.onrender.com/api/users", usersRoute);
+app.use("https://renter-backend.onrender.com/api/hotels",hotelsRoute);
+app.use("https://renter-backend.onrender.com/api/bookings",bookingRoute);
 
 app.listen(port, () => {
   console.log(`server is running on port ${port} `);
