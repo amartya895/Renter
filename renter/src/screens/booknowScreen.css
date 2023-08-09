@@ -1,0 +1,96 @@
+.booknow {
+  display: flex;
+
+  
+}
+
+.hotel-details {
+  width: 70%;
+  height: calc(100vh - 100px); /* Adjust the height based on your needs */
+  overflow-y: scroll;
+  border-top: 1px solid rgb(182, 173, 173);
+  border-right: 1px solid rgb(182, 173, 173);
+  padding: 20px;
+  
+}
+ .gallery img{
+    width: 45%;
+    height: fit-content;
+    margin: 20px 20px 20px 0;
+    border-radius: 8px;
+    
+    transition: all 0.3s ease;
+}
+.heading{
+    font-size: 2.265rem;
+    color:rgb(85, 83, 83);
+    font-weight: 100;
+    line-height: 3rem;
+}
+p{
+    color: #292929;
+   
+    line-height: 1.5rem;
+    color: #292929;
+}
+.payment {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 10px;
+  width: 30%;
+  border-top:1px solid gray ;
+  padding-bottom: 20px;
+}
+.payment.fixed {
+  position: fixed;
+  width: 30%;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  left: 70%;
+  margin-top: -82px;
+  border-top:1px solid gray ;
+}
+.guest-input{
+    width: 100%;
+    height: 40px;
+    padding: 5px 5px 5px 10px;
+    font-size: 20px;
+    border: 1px solid rgb(133, 131, 128);
+    color: #292929;
+    border-radius: 10px;
+}
+.book{
+  width: 40%;
+  height: 50px;
+  font-size: 25px;
+  padding: 10px;
+  background-color: orange;
+  border-radius: 8px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: #292929;
+  font-weight: bold;
+  border: none;
+  float: right;
+  transition: 0.3s;
+}
+.book:hover{
+  background-color: rgb(213, 104, 32);
+  
+}
+.price-breakdown{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  text-align: left;
+}
+.col p
+{
+  padding: 10px;
+}
+

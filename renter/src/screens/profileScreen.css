@@ -1,0 +1,154 @@
+.main-profile-sec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 50px;
+   
+}
+.left-sec{
+    width: 30%;
+    height: 480px;
+    background-color: #f4f1f1;
+    box-shadow: 0px 8px 8px #dad8d8;
+    margin-right: 50px;
+    padding: 30px;
+    border-radius: 8px;
+}
+.userDet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.ppbox{
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 27px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: #4a4a4a;
+    padding: 10px;
+  
+}
+.ppbox:hover{
+    background-color:  rgba(0, 140, 255, 0.1);
+    color: #008cff;
+}
+.ppbox span{
+    font-size: 16px;
+    font-weight: 700;
+
+}
+.ppbox span :nth-child(1){
+    font-size: 25px;
+    margin-right: 20px;
+}
+.pp{
+    width: 60%;
+    height: 150px;
+    /* background: linear-gradient(135deg , #d0a9a9 , #817c7c); */
+    background-image: url("../images/profilePic.png");
+    background-size: cover; /* Make the image cover the entire container */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.right-profile-sec{
+    width: 70%;
+    /* border: 1px solid green; */
+    
+}
+.profile-sec{
+    background-color: #f4f1f1;
+    border-radius: 8px;
+    padding: 20px 0px 2px 30px ;
+    box-shadow: 0px 8px 8px #dad8d8;
+
+    margin-bottom: 20px;
+    
+
+}
+.profile-det-li{
+    display: flex;
+    padding: 18px 0;
+    border-bottom: 1px solid #e3e3e3;
+   
+}
+.detailCardHandler{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    line-height: 40px;
+    
+   
+}
+h3{
+    margin-bottom: 8px;
+}
+.verify{
+    color: green;
+    margin-left: 20px;
+}
+.person-icon{
+    width: 44px;
+    height: 44px;
+    border: 1px solid #dfdfdf;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    align-self: flex-start;
+    font-size: 30px;
+}
+.edit-btn{
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px 20px 10px 15px;
+    color: #008cff;
+    background-color: #fff;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.edit-btn:hover{
+    background-color:  rgba(0, 140, 255, 0.1);
+}
+.profile-key{
+    width: 160px;
+    margin-right: 10px;
+    font-size: 11px;
+    color: #4a4a4a;
+}
+.traveller-det{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 8px 0;
+    justify-content: space-between;
+}
+.profile-val{
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+.login-details{
+    border: 1px solid blueviolet;
+}
+.traveller{
+    border: 1px solid brown;
+}
+
+
+

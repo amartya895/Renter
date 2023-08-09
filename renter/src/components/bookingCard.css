@@ -1,0 +1,80 @@
+.bookingCard {
+  width: 72%;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: aliceblue;
+  box-shadow: 0px 8px 8px #dad8d8;
+}
+.stayDet {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 10px 0 10px;
+}
+.stayDet div {
+  margin-right: 50px;
+}
+.stayDet p {
+  display: flex;
+  flex-direction: column;
+}
+.cancle {
+  background-color: red;
+
+  color: aliceblue;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mTitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  color: #747474;
+}
+.msTitle {
+  font-size: 12px;
+  line-height: 14px;
+  margin: 5px 0 5px 0;
+  color: #747474;
+}
+.disable {
+  background-color: rgba(75, 69, 69, 0.613);
+
+  color: aliceblue;
+  border: none;
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor:not-allowed;
+  transition: 0.3s;
+}
+.cancle:hover {
+  background-color: rgba(255, 0, 0, 0.613);
+}
+.priceCard {
+  width: 28%;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #fafdff;
+  box-shadow: 0px 8px 8px #dad8d8;
+}
+.pricebrkTitle{
+  font-size: 18px;
+  margin: 0;
+  padding: 15px 20px;
+  background-color: #f1f9ff;
+}
+.pricebrk{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 0.5px solid rgba(128, 128, 128, 0.507);
+
+}

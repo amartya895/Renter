@@ -1,0 +1,235 @@
+.main{
+    width: 100%;
+    height: 15rem;
+    text-align: center;
+    background-color: rgba(247,247,247);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+h1{
+    margin-top: 40px;
+    letter-spacing: 2px;
+    font-size: 50px;
+    color: rgba(18, 18, 18, 0.928);
+}
+.picker{
+    width: 75%;
+    height: 34%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0.5px solid rgba(125, 123, 123, 0.88);
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+.dates{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.place{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0 5px 10px;
+    line-height: 20px;
+    align-items: flex-start;
+    flex-grow: 1.5;
+    border-right: 2px solid rgba(40, 38, 38, 0.36);
+    border-radius: 0;
+   
+    height: 70px;
+}
+.place input{
+    border: none;
+    height: 30px;
+    width: 100%;
+    caret-color: black;
+    font-size: 20px;
+   padding: 2px 2px 2px 1px;
+   outline: none;
+   
+    
+}
+.guestcount{
+    flex-grow: 1;
+    height: 60px;
+    border-radius: 0;
+    border-left: 2px solid rgba(40, 38, 38, 0.36);
+   height: 70px;
+    padding-top: 10px;
+    line-height: 20px;
+   text-align: center;
+  
+    
+}
+.search{
+    flex-grow: 1;
+
+}
+.btn-search{
+    width: 95%;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+}
+.checkin{
+    flex-grow: 2;    
+}
+.datepicker{
+    height: 70px;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+    padding: 20px;
+   
+   
+}
+
+/* recommended Destination Section Start */
+
+.recommendDestination{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+   
+   
+}
+.quote{
+    width: 75%;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.quote h1{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.quote p{
+   
+    color:rgb(133, 128, 128);
+    line-height: 30px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+/* place recommended */
+.recommendedPlace{
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-top: 60px;
+   
+}
+.recommendedPlace h1{
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+/* scrollable */
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  .containerScroll {
+    display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 20px 0;
+  }
+  
+  .card {
+    flex-shrink: 0;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  /* reason section */
+
+.reason{
+   justify-content: center;
+   align-items: center;
+   display: flex; 
+  
+  
+}
+.allReason{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.res{
+    width: 33%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+.icon{
+    width: 25%;
+    height: 100%;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sponser{
+    display: flex; 
+    background-color: antiquewhite;
+   
+}
+ 
+.col1
+{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+   
+}
+.col1 h4{
+    font-size: 30px;
+    font-weight: 300;
+    color: chocolate;
+    margin-left: 20px;
+}
+.col2
+{
+    width: 75%;
+   
+   
+}
+.sponsorCard .cardSponser {
+    flex-shrink: 0;
+    width: 400px;
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%; /* Adjust the percentage as needed */
+  }

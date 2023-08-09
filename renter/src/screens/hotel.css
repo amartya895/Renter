@@ -1,0 +1,21 @@
+.main-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.searchHotel{
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 3rem 20px 3rem;
+
+}
+.SearchBar{
+    width: 30%;
+    font-size: 16px;
+    border: 1px solid rgb(187, 182, 182);
+    border-radius: 8px;
+    padding: 5px 5px 5px 10px;
+}

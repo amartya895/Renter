@@ -1,0 +1,131 @@
+.card-container {
+    width: 22%;
+    border-radius: 1rem;
+    border: 1px solid rgb(200, 194, 194);
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    background-color: white;
+    height: fit-content;
+  }
+  
+  .card-img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+  
+  .card-title {
+    margin: 0.5rem 5%;
+    
+  }
+  
+  .card-description {
+    margin: 0.5rem 5%;
+  }
+  
+  .card-btn {
+    text-align: center;
+    border-radius: 5px;
+    width: 30%;
+    padding: 0.5rem 0.5rem;
+    background-color: #483739;
+    color: white;
+    text-decoration: none;
+    margin: 0.5rem 0.5rem;
+  }
+  .card-container:hover {
+    box-shadow: 0px 8px 8px #dad8d8;
+  }
+  .card-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .card-price{
+    width: auto;
+    background-color: #f1c9c96b;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+
+  }
+
+  /* crousle */
+
+  .carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  .favrtIcon{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      z-index: 4;    
+      top: 10px;
+      cursor: pointer;
+      right: 10px;
+      transition: 0.3s;
+      
+  }
+  .favrtIcon:hover{
+    transform: scale(1.2);
+  }
+
+  
+  .slide {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide-hidden {
+    display: none;
+  }
+  
+  .arrow {
+    position: absolute;
+    filter: drop-shadow(0px 0px 5px #555);
+    width: 2rem;
+    height: 2rem;
+    color: rgba(255, 255, 255, 0.461);
+  }
+  
+  .arrow:hover {
+    cursor: pointer;
+  }
+  
+  .arrow-left {
+    left: 0.5rem;
+  }
+  
+  .arrow-right {
+    right: 0.5rem;
+  }
+  
+  .indicators {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+  }
+  
+  .indicator {
+    background-color: white;
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px #555;
+    margin: 0 0.2rem;
+    cursor: pointer;
+  }
+  
+  .indicator-inactive {
+    background-color: grey;
+  }
