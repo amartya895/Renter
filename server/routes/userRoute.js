@@ -8,6 +8,13 @@ router.post("/signup", async (req, resp) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
+    gender : "",
+    state :"",
+    pincode : "",
+    address :"",
+    martialstatus : "",
+    dob :"",
+    
   });
 
   try {
@@ -26,6 +33,12 @@ router.post("/login", async (req, resp) => {
       const temp = {
         name: user.name,
         email: user.email,
+        dob : user.dob,
+        martial : user.martialstatus,
+        gender : user.gender,
+        address : user.address,
+        state : user.state,
+        pincode : user.pincode,
         _id: user._id,
       };
 
@@ -68,7 +81,7 @@ router.post("/updateuser", async (req, resp) => {
 
     await user.save(); 
 
-    console.log("Updated user:", user);
+    // console.log("Updated user:", user);
     return resp.status(200).json({ message: "User updated successfully" });
   } catch (error) {
     console.error("Error updating user:", error);
