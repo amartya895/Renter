@@ -18,6 +18,7 @@ function ListProperty() {
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
+  const apiUrl = process.env.REACT_API_URL;
 
   const handleRegister = async () => {
     const hotelData = {
@@ -39,7 +40,7 @@ function ListProperty() {
     try {
       console.log("data sending started");
       await (
-        await axios.post("/api/hotels/registerhotel", hotelData)
+        await axios.post(`${apiUrl}/hotels/registerhotel`, hotelData)
       ).data;
       swal.fire('Congrulation' , 'Your Hotel Registered Successfully','success').then((result)=>{
         window.location.href = '/allhotels'

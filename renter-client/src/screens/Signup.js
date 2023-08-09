@@ -13,6 +13,7 @@ function Signup({ closeModalSignup }) {
   const [errors, setErrors] = useState({});
 
   const user = JSON.parse(localStorage.getItem("currentUser"));
+  const apiUrl = process.env.REACT_API_URL;
   useEffect(() => {
     if (user) {
       window.location.href = "/allhotels";
@@ -66,8 +67,8 @@ function Signup({ closeModalSignup }) {
       };
 
       try {
-        await axios.post("api/users/signup", userData);
-        const result = await axios.post("/api/users/login", { email, password });
+        await axios.post(`${apiUrl}/users/signup`, userData);
+        const result = await axios.post(`${apiUrl}/users/login`, { email, password });
         
         localStorage.setItem("currentUser", JSON.stringify(result.data));
         window.location.href = "/";

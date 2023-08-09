@@ -10,6 +10,7 @@ function Login({ closeModal }) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const user = JSON.parse(localStorage.getItem("currentUser"));
+  const apiUrl = process.env.REACT_API_URL;
 
   useEffect(() => {
     if (user) {
@@ -51,7 +52,7 @@ function Login({ closeModal }) {
       };
 
       try {
-        const result = await axios.post("/api/users/login", userData);
+        const result = await axios.post(`${apiUrl}/users/login`, userData);
 
         localStorage.setItem("currentUser", JSON.stringify(result.data));
         window.location.href = "/";

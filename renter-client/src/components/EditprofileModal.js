@@ -9,6 +9,7 @@ function EditprofileModal({ closeModal }) {
   const [userPincode, setUserPincode] = useState("");
   const [userAddress, setUserAddress] = useState("");
   const [userDob, setUserDob] = useState("");
+  const apiUrl = process.env.REACT_API_URL;
 
   const user = JSON.parse(localStorage.getItem("currentUser"));
   const userId = user._id;
@@ -34,7 +35,7 @@ function EditprofileModal({ closeModal }) {
     // alert(data.useraddress);
     try {
       console.log("Try sending the data");
-      const res = await axios.post("/api/users/updateuser", data);
+      const res = await axios.post(`${apiUrl}/api/users/updateuser`, data);
       // console.log(res)
       console.log("Data sent Successfully");
       const userDataInLocalStorage = JSON.parse(

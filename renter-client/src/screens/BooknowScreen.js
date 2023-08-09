@@ -22,6 +22,7 @@ function BooknowScreen() {
   const [guestName, setGuestName] = useState("");
   const [guestEmail, setGuestEmail] = useState("");
   const [guestNumber, setGuestNumber] = useState("");
+  const apiUrl = process.env.REACT_API_URL;
 
   const setFixSidebar = () => {
     if (window.scrollY >= 90) {
@@ -39,7 +40,7 @@ function BooknowScreen() {
         window.location.href = "/login";
       }
       try {
-        const { data } = await axios.post("/api/hotels/gethotelbyid", {
+        const { data } = await axios.post(`${apiUrl}/hotels/gethotelbyid`, {
           hotelid,
         });
         setHotel(data);
@@ -67,7 +68,7 @@ function BooknowScreen() {
     };
 
     try {
-      const bookingData = await axios.post("https://renter-backend.onrender.com/api/bookings/bookhotel", bookDetail);
+      const bookingData = await axios.post(`${apiUrl}/bookings/bookhotel`, bookDetail);
       swal.fire('Congrulation' , 'Your Room Booked Successfully','success').then((result)=>{
         window.location.href = '/allbookings'
       });

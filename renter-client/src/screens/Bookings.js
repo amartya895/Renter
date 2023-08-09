@@ -6,6 +6,7 @@ import "./bookings.css";
 function Bookings() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
   const userid = user._id;
+  const apiUrl = process.env.REACT_API_URL;
 
   const [bookingDetails, setBookingDetails] = useState([]); // Initialize bookingDetails as an empty array
 
@@ -16,7 +17,7 @@ function Bookings() {
       }
       try {
         const response = await axios.post(
-          "/api/bookings/getbooking",
+          `${apiUrl}/bookings/getbooking`,
           {
             userid,
           }

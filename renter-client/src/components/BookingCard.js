@@ -22,12 +22,13 @@ function BookingCard({
 }) {
   const fromdate = moment(Fromdate, "DD-MM-YYYY").format("ddd, DD MMM YYYY");
   const todate = moment(Todate, "DD-MM-YYYY").format("ddd, DD MMM YYYY");
+  const apiUrl = process.env.REACT_API_URL;
 
   const handleCancel = async () => {
     console.log("cancel");
 
     try {
-      const result = await axios.post("/api/bookings/cancelbooking", {
+      const result = await axios.post(`${apiUrl}/bookings/cancelbooking`, {
         hotelId: hotelid,
         bookingId: bookingid,
       });

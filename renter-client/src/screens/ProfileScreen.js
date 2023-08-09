@@ -11,13 +11,14 @@ import EditprofileModal from "../components/EditprofileModal";
 function ProfileScreen() {
   const userData = JSON.parse(window.localStorage.getItem("currentUser"));
   const [travellers, setTravellers] = useState([]);
+  const apiUrl = process.env.REACT_API_URL;
   if (!userData) {
     window.location.href = "/login";
   }
 
   useEffect(() => {
     const fetchData = async () => {
-      const travellerData = (await axios.get("/api/travellers/gettraveller"))
+      const travellerData = (await axios.get(`${apiUrl}/travellers/gettraveller`))
         .data;
       setTravellers(travellerData);
     };

@@ -7,6 +7,7 @@ const AddTravellerModal = ({ closeModal }) => {
   const [travellerPhone, setTravellerPhone] = useState("");
   const [travellerGender, setTravellerGender] = useState("MALE");
   const [travellerDob, setTravellerDob] = useState("");
+  const apiUrl = process.env.REACT_API_URL;
   useEffect(() => {
     document.body.style.overflowY = "hidden";
 
@@ -27,7 +28,7 @@ const AddTravellerModal = ({ closeModal }) => {
     console.log(data);
     try {
       const res = await axios.post(
-        "/api/travellers/addtraveller",
+        `${apiUrl}/travellers/addtraveller`,
         data
       );
       console.log("Data sent Successfully");
