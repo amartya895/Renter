@@ -17,7 +17,7 @@ function ProfileScreen() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const travellerData = (await axios.get("https://renter-backend.onrender.com/api/travellers/gettraveller"))
+      const travellerData = (await axios.get("/api/travellers/gettraveller"))
         .data;
       setTravellers(travellerData);
     };

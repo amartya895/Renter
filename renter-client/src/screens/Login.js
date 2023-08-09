@@ -51,7 +51,7 @@ function Login({ closeModal }) {
       };
 
       try {
-        const result = await axios.post("https://renter-backend.onrender.com/api/users/login", userData);
+        const result = await axios.post("/api/users/login", userData);
 
         localStorage.setItem("currentUser", JSON.stringify(result.data));
         window.location.href = "/";

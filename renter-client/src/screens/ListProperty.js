@@ -39,7 +39,7 @@ function ListProperty() {
     try {
       console.log("data sending started");
       await (
-        await axios.post("https://renter-backend.onrender.com/api/hotels/registerhotel", hotelData)
+        await axios.post("/api/hotels/registerhotel", hotelData)
       ).data;
       swal.fire('Congrulation' , 'Your Hotel Registered Successfully','success').then((result)=>{
         window.location.href = '/allhotels'

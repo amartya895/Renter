@@ -39,7 +39,7 @@ function BooknowScreen() {
         window.location.href = "/login";
       }
       try {
-        const { data } = await axios.post("https://renter-backend.onrender.com/api/hotels/gethotelbyid", {
+        const { data } = await axios.post("/api/hotels/gethotelbyid", {
           hotelid,
         });
         setHotel(data);

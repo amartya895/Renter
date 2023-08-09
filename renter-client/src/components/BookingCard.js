@@ -27,7 +27,7 @@ function BookingCard({
     console.log("cancel");
 
     try {
-      const result = await axios.post("https://renter-backend.onrender.com/api/bookings/cancelbooking", {
+      const result = await axios.post("/api/bookings/cancelbooking", {
         hotelId: hotelid,
         bookingId: bookingid,
       });

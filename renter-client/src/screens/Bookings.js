@@ -16,7 +16,7 @@ function Bookings() {
       }
       try {
         const response = await axios.post(
-          "https://renter-backend.onrender.com/api/bookings/getbooking",
+          "/api/bookings/getbooking",
           {
             userid,
           }

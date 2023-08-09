@@ -27,7 +27,7 @@ const AddTravellerModal = ({ closeModal }) => {
     console.log(data);
     try {
       const res = await axios.post(
-        "https://renter-backend.onrender.com/api/travellers/addtraveller",
+        "/api/travellers/addtraveller",
         data
       );
       console.log("Data sent Successfully");
