@@ -10,7 +10,6 @@ function Login({ closeModal }) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const user = JSON.parse(localStorage.getItem("currentUser"));
-  const apiUrl = process.env.REACT_API_URL;
 
   useEffect(() => {
     if (user) {
@@ -34,9 +33,7 @@ function Login({ closeModal }) {
 
     if (!password) {
       newErrors.password = "*Password is required";
-    }
-    else if(password.length< 4)
-    {
+    } else if (password.length < 4) {
       newErrors.password = "*Password is too small";
     }
 
@@ -52,7 +49,10 @@ function Login({ closeModal }) {
       };
 
       try {
-        const result = await axios.post(`${apiUrl}/users/login`, userData);
+        const result = await axios.post(
+          "https://renter-backend.onrender.com/api/users/login",
+          userData
+        );
 
         localStorage.setItem("currentUser", JSON.stringify(result.data));
         window.location.href = "/";
@@ -118,11 +118,7 @@ function Login({ closeModal }) {
             </div>
             <p className="sign-up login-link">
               Don't have an account?
-              <a
-                rel="noopener noreferrer"
-                href="/"
-                className="hover:underline"
-              >
+              <a rel="noopener noreferrer" href="/" className="hover:underline">
                 Sign up
               </a>
             </p>

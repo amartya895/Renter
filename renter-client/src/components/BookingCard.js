@@ -22,16 +22,18 @@ function BookingCard({
 }) {
   const fromdate = moment(Fromdate, "DD-MM-YYYY").format("ddd, DD MMM YYYY");
   const todate = moment(Todate, "DD-MM-YYYY").format("ddd, DD MMM YYYY");
-  const apiUrl = process.env.REACT_API_URL;
 
   const handleCancel = async () => {
     console.log("cancel");
 
     try {
-      const result = await axios.post(`${apiUrl}/bookings/cancelbooking`, {
-        hotelId: hotelid,
-        bookingId: bookingid,
-      });
+      const result = await axios.post(
+        "https://renter-backend.onrender.com/api/bookings/cancelbooking",
+        {
+          hotelId: hotelid,
+          bookingId: bookingid,
+        }
+      );
 
       swal
         .fire("Congrats", "Your Booking Cancelled Successfully", "success")
@@ -47,12 +49,12 @@ function BookingCard({
   return (
     <>
       <div className="bookingCard">
-        <div style={{display: 'flex',justifyContent:'space-between'}}>
-        <h1 style={{ fontSize: "30px", margin: "0 0 20px 0" }}>
-          <BiHomeAlt style={{ margin: "0 10px 0 0", color: "orange" }} />
-          {Hotelname}
-        </h1>
-        <p className="mTitle">Booking ID - {bookingid}</p>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h1 style={{ fontSize: "30px", margin: "0 0 20px 0" }}>
+            <BiHomeAlt style={{ margin: "0 10px 0 0", color: "orange" }} />
+            {Hotelname}
+          </h1>
+          <p className="mTitle">Booking ID - {bookingid}</p>
         </div>
         <h4 style={{ fontSize: "18px", marginBottom: 5 }}>BOOKING DETAILS</h4>
         <p style={{ fontSize: "16px", color: "#747474" }}>
@@ -179,20 +181,20 @@ function BookingCard({
           <li>
             <div className="pricebrk">
               <div>
-                <span style={{color:'#1a7971'}}>Discount Coupon</span>
+                <span style={{ color: "#1a7971" }}>Discount Coupon</span>
                 <p
                   style={{
                     border: "1px dashed gray",
                     padding: "0 5px 0 5px",
                     borderRadius: 8,
-                    color:'#747474'
+                    color: "#747474",
                   }}
                 >
                   WELCOMEMMT
                 </p>
               </div>
 
-              <span style={{color:'#1a7971'}}>- ₹ 93</span>
+              <span style={{ color: "#1a7971" }}>- ₹ 93</span>
             </div>
           </li>
           <li>
@@ -217,7 +219,15 @@ function BookingCard({
           <span>Online </span>
           <span>₹ 1,700</span>
         </div>
-        <p className="msTitle"  style={{ color: "red" , fontSize:'16px' , padding:'15px 20px' ,textAlign:'center'}}>
+        <p
+          className="msTitle"
+          style={{
+            color: "red",
+            fontSize: "16px",
+            padding: "15px 20px",
+            textAlign: "center",
+          }}
+        >
           Cancellation charges applicable.
         </p>
       </div>

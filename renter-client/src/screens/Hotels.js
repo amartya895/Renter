@@ -8,8 +8,6 @@ function Hotels() {
   const [hotels, setHotels] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { place, fromdate, todate } = useParams();
-  const apiUrl = process.env.REACT_API_URL;
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +15,7 @@ function Hotels() {
         console.log("Trying to fetch data");
         const data = (
           await axios.get(
-           `${apiUrl}/hotels/getallhotels`
+            "https://renter-backend.onrender.com/api/hotels/getallhotels"
           )
         ).data;
         console.log("Data fetched successfully");

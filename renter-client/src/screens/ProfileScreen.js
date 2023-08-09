@@ -11,15 +11,17 @@ import EditprofileModal from "../components/EditprofileModal";
 function ProfileScreen() {
   const userData = JSON.parse(window.localStorage.getItem("currentUser"));
   const [travellers, setTravellers] = useState([]);
-  const apiUrl = process.env.REACT_API_URL;
   if (!userData) {
     window.location.href = "/login";
   }
 
   useEffect(() => {
     const fetchData = async () => {
-      const travellerData = (await axios.get(`${apiUrl}/travellers/gettraveller`))
-        .data;
+      const travellerData = (
+        await axios.get(
+          "https://renter-backend.onrender.com/api/travellers/gettraveller"
+        )
+      ).data;
       setTravellers(travellerData);
     };
 
@@ -29,9 +31,9 @@ function ProfileScreen() {
   const [showModal, setShowModal] = useState(false);
   const [showModalEdit, setShowModalEdit] = useState(false);
 
-  const closeModal = () =>  setShowModal(false);
-   
-  const closeModalEdit =()=> setShowModalEdit(false);
+  const closeModal = () => setShowModal(false);
+
+  const closeModalEdit = () => setShowModalEdit(false);
 
   return (
     <>
@@ -96,7 +98,9 @@ function ProfileScreen() {
               </div>
               <div className="profile-right">
                 <button className="edit-btn">
-                  <span onClick={() => setShowModalEdit(true)}>&#9998; Edit</span>
+                  <span onClick={() => setShowModalEdit(true)}>
+                    &#9998; Edit
+                  </span>
                 </button>
               </div>
             </div>
@@ -110,39 +114,85 @@ function ProfileScreen() {
               <li>
                 <div className="profile-det-li">
                   <span className="profile-key">BIRTHDAY</span>
-                  <span className="profile-val">{userData.dob === "" ? <span style={{fontSize:'14px' , color:'#008cff'}}>+ Add</span> :userData.dob}</span>
+                  <span className="profile-val">
+                    {userData.dob === "" ? (
+                      <span style={{ fontSize: "14px", color: "#008cff" }}>
+                        + Add
+                      </span>
+                    ) : (
+                      userData.dob
+                    )}
+                  </span>
                 </div>
               </li>
               <li>
                 <div className="profile-det-li">
                   <span className="profile-key">GENDER</span>
-                  <span className="profile-val">{userData.gender === "" ? <span style={{fontSize:'14px' , color:'#008cff'}}>+ Add</span> :userData.gender}</span>
+                  <span className="profile-val">
+                    {userData.gender === "" ? (
+                      <span style={{ fontSize: "14px", color: "#008cff" }}>
+                        + Add
+                      </span>
+                    ) : (
+                      userData.gender
+                    )}
+                  </span>
                 </div>
               </li>
               <li>
                 <div className="profile-det-li">
                   <span className="profile-key">MARITAL STATUS</span>
-                  <span className="profile-val">{userData.martial === "" ? <span style={{fontSize:'14px' , color:'#008cff'}}>+ Add</span> :userData.martial}</span>
+                  <span className="profile-val">
+                    {userData.martial === "" ? (
+                      <span style={{ fontSize: "14px", color: "#008cff" }}>
+                        + Add
+                      </span>
+                    ) : (
+                      userData.martial
+                    )}
+                  </span>
                 </div>
               </li>
               <li>
                 <div className="profile-det-li">
                   <span className="profile-key">YOUR ADDRESS</span>
                   <span className="profile-val">
-                  {userData.address === "" ? <span style={{fontSize:'14px' , color:'#008cff'}}>+ Add</span> :userData.address}
+                    {userData.address === "" ? (
+                      <span style={{ fontSize: "14px", color: "#008cff" }}>
+                        + Add
+                      </span>
+                    ) : (
+                      userData.address
+                    )}
                   </span>
                 </div>
               </li>
               <li>
                 <div className="profile-det-li">
                   <span className="profile-key">PINCODE</span>
-                  <span className="profile-val">{userData.pincode === "" ? <span style={{fontSize:'14px' , color:'#008cff'}}>+ Add</span> :userData.pincode}</span>
+                  <span className="profile-val">
+                    {userData.pincode === "" ? (
+                      <span style={{ fontSize: "14px", color: "#008cff" }}>
+                        + Add
+                      </span>
+                    ) : (
+                      userData.pincode
+                    )}
+                  </span>
                 </div>
               </li>
               <li>
                 <div className="profile-det-li">
                   <span className="profile-key">STATE</span>
-                  <span className="profile-val">{userData.state === "" ? <span style={{fontSize:'14px' , color:'#008cff'}}>+ Add</span> :userData.state}</span>
+                  <span className="profile-val">
+                    {userData.state === "" ? (
+                      <span style={{ fontSize: "14px", color: "#008cff" }}>
+                        + Add
+                      </span>
+                    ) : (
+                      userData.state
+                    )}
+                  </span>
                 </div>
               </li>
             </ul>

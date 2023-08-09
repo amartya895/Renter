@@ -21,7 +21,6 @@ export const Card = ({
   todate,
 }) => {
   const [slide, setSlide] = useState(0);
-  const apiUrl = process.env.REACT_API_URL;
 
   const nextSlide = () => {
     setSlide(slide === images.length - 1 ? 0 : slide + 1);

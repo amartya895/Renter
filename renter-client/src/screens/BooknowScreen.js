@@ -8,7 +8,7 @@ import { GrSatellite } from "react-icons/gr";
 import { PiTelevisionLight } from "react-icons/pi";
 import { AiOutlineCar } from "react-icons/ai";
 import moment from "moment";
-import swal from 'sweetalert2';
+import swal from "sweetalert2";
 
 function BooknowScreen() {
   const { hotelid, fromdate, todate } = useParams();
@@ -22,7 +22,6 @@ function BooknowScreen() {
   const [guestName, setGuestName] = useState("");
   const [guestEmail, setGuestEmail] = useState("");
   const [guestNumber, setGuestNumber] = useState("");
-  const apiUrl = process.env.REACT_API_URL;
 
   const setFixSidebar = () => {
     if (window.scrollY >= 90) {
@@ -40,9 +39,12 @@ function BooknowScreen() {
         window.location.href = "/login";
       }
       try {
-        const { data } = await axios.post(`${apiUrl}/hotels/gethotelbyid`, {
-          hotelid,
-        });
+        const { data } = await axios.post(
+          "https://renter-backend.onrender.com/api/hotels/gethotelbyid",
+          {
+            hotelid,
+          }
+        );
         setHotel(data);
         setTotalAmount(data.rentperday * totalDays);
         setSubtotal(+totalAmount + 120 + 100);
@@ -52,7 +54,7 @@ function BooknowScreen() {
     };
 
     fetchData();
-  }, [hotelid,totalDays,totalAmount]);
+  }, [hotelid, totalDays, totalAmount]);
 
   const handleBook = async () => {
     const bookDetail = {
@@ -68,13 +70,18 @@ function BooknowScreen() {
     };
 
     try {
-      const bookingData = await axios.post(`${apiUrl}/bookings/bookhotel`, bookDetail);
-      swal.fire('Congrulation' , 'Your Room Booked Successfully','success').then((result)=>{
-        window.location.href = '/allbookings'
-      });
+      const bookingData = await axios.post(
+        "https://renter-backend.onrender.com/api/bookings/bookhotel",
+        bookDetail
+      );
+      swal
+        .fire("Congrulation", "Your Room Booked Successfully", "success")
+        .then((result) => {
+          window.location.href = "/allbookings";
+        });
     } catch (error) {
       console.error(error);
-      swal.fire('Opps' , 'Something Went Wrong','error');
+      swal.fire("Opps", "Something Went Wrong", "error");
     }
   };
 
@@ -85,7 +92,6 @@ function BooknowScreen() {
       <div className="hotel-details">
         {hotel && (
           <div>
-           
             <p>
               Kullu / <b>Manali</b> / Old Manali
             </p>
@@ -243,7 +249,7 @@ function BooknowScreen() {
           </>
         )}
 
-        <button  className="book" onClick={handleBook}>
+        <button className="book" onClick={handleBook}>
           Book
         </button>
       </div>

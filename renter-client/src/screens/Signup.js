@@ -13,7 +13,6 @@ function Signup({ closeModalSignup }) {
   const [errors, setErrors] = useState({});
 
   const user = JSON.parse(localStorage.getItem("currentUser"));
-  const apiUrl = process.env.REACT_API_URL;
   useEffect(() => {
     if (user) {
       window.location.href = "/allhotels";
@@ -28,31 +27,28 @@ function Signup({ closeModalSignup }) {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!name ) {
+    if (!name) {
       newErrors.name = "*Name is required";
-    }
-    else if(!/^[a-zA-Z]+ [a-zA-Z]+$/.test(name))
-    {
+    } else if (!/^[a-zA-Z]+ [a-zA-Z]+$/.test(name)) {
       newErrors.name = "*Invalid Name";
     }
-   
-    
+
     if (!email) {
       newErrors.email = "*Email is required";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = "*Invalid email address";
     }
-    
+
     if (!password) {
       newErrors.password = "*Password is required";
     } else if (password.length < 6) {
       newErrors.password = "*Password must be at least 6 characters";
     }
-    
+
     if (password !== cpassword) {
       newErrors.cpassword = "*Passwords do not match";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -67,9 +63,15 @@ function Signup({ closeModalSignup }) {
       };
 
       try {
-        await axios.post(`${apiUrl}/users/signup`, userData);
-        const result = await axios.post(`${apiUrl}/users/login`, { email, password });
-        
+        await axios.post(
+          "https://renter-backend.onrender.com/api/users/signup",
+          userData
+        );
+        const result = await axios.post(
+          "https://renter-backend.onrender.com/api/users/login",
+          { email, password }
+        );
+
         localStorage.setItem("currentUser", JSON.stringify(result.data));
         window.location.href = "/";
         console.log(userData);
@@ -124,7 +126,9 @@ function Signup({ closeModalSignup }) {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="*****"
               />
-              {errors.password && <p className="error-text">{errors.password}</p>}
+              {errors.password && (
+                <p className="error-text">{errors.password}</p>
+              )}
             </div>
             {/* Confirm Password input */}
             <div className="form-group">
@@ -135,7 +139,9 @@ function Signup({ closeModalSignup }) {
                 value={cpassword}
                 onChange={(e) => setCpassword(e.target.value)}
               />
-              {errors.cpassword && <p className="error-text">{errors.cpassword}</p>}
+              {errors.cpassword && (
+                <p className="error-text">{errors.cpassword}</p>
+              )}
             </div>
           </form>
           <button
