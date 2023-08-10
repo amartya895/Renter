@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./addTravellerModal.css";
 import axios from "axios";
+import swal from "sweetalert2";
 const AddTravellerModal = ({ closeModal }) => {
   const [travellerName, setTravellerName] = useState("");
   const [travellerEmail, setTravellerEmail] = useState("");
@@ -34,10 +35,16 @@ const AddTravellerModal = ({ closeModal }) => {
         "https://renter-backend.onrender.com/api/travellers/addtraveller",
         // "/api/travellers/addtraveller",
         data
-      );
+      )
+      swal
+        .fire("Congrulation", "Saved Traveller Successfully", "success")
+        .then((result) => {
+          window.location.href = "/profile";
+        });
       console.log("Data sent Successfully");
     } catch (error) {
       console.log(error, "something went wrong");
+      swal.fire("Opps", "Something Went Wrong", "error");
     }
   };
 
