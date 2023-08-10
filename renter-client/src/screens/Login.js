@@ -51,6 +51,7 @@ function Login({ closeModal }) {
       try {
         const result = await axios.post(
           "https://renter-backend.onrender.com/api/users/login",
+          // "/api/users/login",
           userData
         );
 

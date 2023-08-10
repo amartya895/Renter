@@ -5,6 +5,7 @@ const Traveller = require("../modals/traveller");
 
 router.post("/addtraveller", async (req, resp) => {
   const {
+    userid,
     travellername,
     travelleremail,
     travellerphone,
@@ -14,6 +15,7 @@ router.post("/addtraveller", async (req, resp) => {
 
   try {
     const data = {
+      userid : userid,
       travellername: travellername,
       travelleremail: travelleremail,
       travellerphone: travellerphone,
@@ -29,12 +31,17 @@ router.post("/addtraveller", async (req, resp) => {
   }
 });
 
-router.get('/gettraveller' , async(req , resp)=>{
+router.post('/gettraveller' , async(req , resp)=>{
+
+    const userId = req.body.userId;
+
+    console.log(userId);
 
   try {
 
-    const travellerData = await Traveller.find({});
+    const travellerData = await Traveller.find({userid : userId});
 
+    // console.log(travellerData)
     return resp.send(travellerData);
     
    } catch (error) {

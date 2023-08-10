@@ -7,6 +7,9 @@ const AddTravellerModal = ({ closeModal }) => {
   const [travellerPhone, setTravellerPhone] = useState("");
   const [travellerGender, setTravellerGender] = useState("MALE");
   const [travellerDob, setTravellerDob] = useState("");
+
+  const user = JSON.parse(localStorage.getItem('currentUser'));
+  const userId = user._id;
   useEffect(() => {
     document.body.style.overflowY = "hidden";
 
@@ -17,6 +20,7 @@ const AddTravellerModal = ({ closeModal }) => {
 
   const handleSave = async () => {
     const data = {
+      userid : userId,
       travellername: travellerName,
       travelleremail: travellerEmail,
       travellerphone: travellerPhone,
@@ -27,7 +31,8 @@ const AddTravellerModal = ({ closeModal }) => {
     console.log(data);
     try {
       const res = await axios.post(
-        "https://renter-backend.onrender.com/api/travellers/addtraveller",
+        // "https://renter-backend.onrender.com/api/travellers/addtraveller",
+        "/api/travellers/addtraveller",
         data
       );
       console.log("Data sent Successfully");

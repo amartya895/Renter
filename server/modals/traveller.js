@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const travellerSchmea = mongoose.Schema({
+  userid : {
+    type : String,
+    required:true,
+  },
   travellername: {
     type: String,
     required: true,

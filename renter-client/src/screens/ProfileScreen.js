@@ -9,8 +9,11 @@ import axios from "axios";
 import EditprofileModal from "../components/EditprofileModal";
 
 function ProfileScreen() {
-  const userData = JSON.parse(window.localStorage.getItem("currentUser"));
+  const userData = JSON.parse(localStorage.getItem("currentUser"));
   const [travellers, setTravellers] = useState([]);
+
+  const userId = userData._id;
+  
   if (!userData) {
     window.location.href = "/login";
   }
@@ -18,15 +21,19 @@ function ProfileScreen() {
   useEffect(() => {
     const fetchData = async () => {
       const travellerData = (
-        await axios.get(
-          "https://renter-backend.onrender.com/api/travellers/gettraveller"
+        await axios.post(
+          "https://renter-backend.onrender.com/api/travellers/gettraveller",
+          // "/api/travellers/gettraveller",
+          {
+            userId
+          }
         )
-      ).data;
+      ).data
       setTravellers(travellerData);
     };
 
     fetchData();
-  }, [userData]);
+  }, [userId]);
 
   const [showModal, setShowModal] = useState(false);
   const [showModalEdit, setShowModalEdit] = useState(false);
