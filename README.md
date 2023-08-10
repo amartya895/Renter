@@ -1,6 +1,6 @@
 # Renter - Hotel Booking Website
 
-![Renter Logo](./renter-client/src/images/houselogo.png)
+![Renter Logo](./renter-client/src/images/renterScreenshot.png)
 
 Renter is a hotel booking website that allows users to seamlessly book hotels, manage their properties, and enjoy a convenient booking experience. The platform is built using Node.js for the backend, MongoDB for data storage and retrieval, and Express.js for handling server-side logic. The frontend is deployed on Vercel, while the backend is deployed on Render.
 
