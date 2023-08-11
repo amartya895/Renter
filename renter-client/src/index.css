@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    /* background: linear-gradient(130deg , #5e70cd); */
     
+}
+ul li{
+    list-style: none;
 }

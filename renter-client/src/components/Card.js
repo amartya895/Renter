@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import "./card.css";
 import { Link } from "react-router-dom";
-import favouriteIcon from "../images/favourite.png";
-import favouriteSet from "../images/favouriteSet.png";
+import whiteFavourite from "../images/favourite.png";
+import redFavourite from "../images/favouriteSet.png";
 
 export const Card = ({
   name,
@@ -29,11 +29,16 @@ export const Card = ({
   const prevSlide = () => {
     setSlide(slide === 0 ? images.length - 1 : slide - 1);
   };
-  const [favourite , setFavourite] = useState(false);
+  const [makeFavourite , setMakeFavourite] = useState(false);
+
+  const handleFavourite = ()=>{
+    
+    setMakeFavourite(!makeFavourite)
+  }
   return (
     <div className="card-container">
       <div className="carousel">
-        <img className="favrtIcon" src={favourite?(favouriteSet):(favouriteIcon)} alt="" srcset="" onClick={(e)=>setFavourite(!favourite)} />
+        <img className="favrtIcon" src={makeFavourite?(redFavourite):(whiteFavourite)} alt="" srcset="" onClick={handleFavourite} />
         <BsArrowLeftCircleFill
           onClick={prevSlide}
           className="arrow arrow-left"

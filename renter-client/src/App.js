@@ -10,6 +10,7 @@ import Login from './screens/Login';
 import BooknowScreen from './screens/BooknowScreen';
 import Bookings from './screens/Bookings';
 import ProfileScreen from './screens/ProfileScreen';
+import Favourite from './screens/Favourite';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/allhotels' element={<Hotels />} />
         <Route path='/allbookings' Component={Bookings} />
         <Route path='/profile' Component={ProfileScreen}/>
+        <Route path='/favourite' Component={Favourite}/>
         <Route path = '/allhotels/:place/:fromdate/:todate' Component={Hotels}/>
         <Route path = '/booknow/:hotelid/:fromdate/:todate' Component={BooknowScreen}/>
       </Routes>
