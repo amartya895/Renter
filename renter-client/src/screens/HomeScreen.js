@@ -8,8 +8,6 @@ import { TiFlashOutline } from "react-icons/ti";
 import { TiHome } from "react-icons/ti";
 import { FaAward } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import moment from "moment";
 import img1 from "../images/img1.webp";
 import img2 from "../images/img2.webp";
 import img3 from "../images/img3.webp";
