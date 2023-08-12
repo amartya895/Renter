@@ -1,25 +1,22 @@
-.booking{
-    margin: 0 8% 5% 8% ;
-   display: flex;
-   flex-direction: row;
-    
+.booking {
+  margin: 0 8% 5% 8%;
+  display: flex;
+  flex-direction: row;
 }
 
-@media only screen and (max-width : 700px)
-{
-    .booking{
-        flex-direction: column;
-        margin: 18px;
-    }
-    .bookingCard{
-        width: 100%;
-        margin: 0px;
-
-    }
-    .priceCard{
-        width: 100%;
-        margin: 0px;
-        margin-top: 20px;
-    }
-
+@media only screen and (max-width: 700px) {
+  .booking {
+    margin: 0px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .bookingCard {
+    width: 93%;
+    margin: 13px;
+  }
+  .priceCard {
+    width: 93%;
+    margin: 13px;
+    margin-top: 20px
+  }
 }

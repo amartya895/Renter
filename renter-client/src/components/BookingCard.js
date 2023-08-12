@@ -49,7 +49,7 @@ function BookingCard({
   return (
     <>
       <div className="bookingCard">
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className="bookingCard-head">
           <h1 style={{ fontSize: "30px", margin: "0 0 20px 0" }}>
             <BiHomeAlt style={{ margin: "0 10px 0 0", color: "orange" }} />
             {Hotelname}
