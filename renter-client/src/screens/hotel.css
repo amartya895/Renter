@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 .searchHotel{
     display: flex;
@@ -18,4 +19,15 @@
     border: 1px solid rgb(187, 182, 182);
     border-radius: 8px;
     padding: 5px 5px 5px 10px;
+}
+
+@media only screen and (max-width : 700px)
+{
+    .searchHotel{
+        flex-direction: column;
+    }
+    .SearchBar{
+        width: 100%;
+        margin-top: 20px;
+    }
 }

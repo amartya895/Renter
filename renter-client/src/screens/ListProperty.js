@@ -63,7 +63,7 @@ function ListProperty() {
           <div className="left-center">
             <h1>List your property at Renter</h1>
             <p style={{ marginTop: "10px", marginBottom: "15px" }}>
-              #1 booking hotel booking service
+              #1 Hotel booking service
             </p>
             <h2 style={{ lineHeight: "30px", color: "#4a4a4a" }}>
               "Hospitality is not to change people, but to offer them space
