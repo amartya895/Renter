@@ -30,8 +30,8 @@ function BooknowScreen() {
       }
       try {
         const { data } = await axios.post(
-          "https://renter-backend.onrender.com/api/hotels/gethotelbyid",
-          // "/api/hotels/gethotelbyid",
+          // "https://renter-backend.onrender.com/api/hotels/gethotelbyid",
+          "/api/hotels/gethotelbyid",
           {
             hotelid,
           }
