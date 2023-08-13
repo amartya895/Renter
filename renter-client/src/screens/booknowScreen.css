@@ -6,11 +6,10 @@
 
 .hotel-details {
   width: 70%;
-  height: calc(100vh - 100px); /* Adjust the height based on your needs */
-  overflow-y: scroll;
   border-top: 1px solid rgb(182, 173, 173);
   border-right: 1px solid rgb(182, 173, 173);
   padding: 20px;
+  border-top-right-radius: 8px;
   
 }
  .gallery img{
@@ -34,24 +33,17 @@ p{
     color: #292929;
 }
 .payment {
-  position: relative;
-  padding-left: 20px;
-  padding-right: 10px;
-  padding-top: 10px;
-  width: 30%;
-  border-top:1px solid gray ;
-  padding-bottom: 20px;
+  border: 1px solid rgba(133, 131, 128, 0.601);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.437);
+
 }
-.payment.fixed {
-  position: fixed;
+.right-sec-payment
+{
   width: 30%;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  left: 70%;
-  margin-top: -82px;
-  border-top:1px solid gray ;
+  padding: 30px;
+
 }
 .guest-input{
     width: 100%;
@@ -63,7 +55,7 @@ p{
     border-radius: 10px;
 }
 .book{
-  width: 40%;
+  width: 100%;
   height: 50px;
   font-size: 25px;
   padding: 10px;
@@ -72,7 +64,6 @@ p{
   color: black;
   text-align: center;
   cursor: pointer;
-  box-shadow: #292929;
   font-weight: bold;
   border: none;
   float: right;
@@ -94,3 +85,17 @@ p{
   padding: 10px;
 }
 
+@media only screen and (max-width:700px)
+{
+  .booknow{
+    flex-direction: column;
+  }
+  .right-sec-payment{
+    width: 100%;
+  }
+  .hotel-details{
+    border-top-right-radius: 0;
+    width: 100%;
+    border-bottom: 1px solid rgb(133, 131, 128);
+  }
+}

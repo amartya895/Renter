@@ -13,7 +13,6 @@ import swal from "sweetalert2";
 function BooknowScreen() {
   const { hotelid, fromdate, todate } = useParams();
   const [hotel, setHotel] = useState();
-  const [fix, setFix] = useState(false);
   const fromDateObj = moment(fromdate, "DD-MM-YYYY");
   const toDateObj = moment(todate, "DD-MM-YYYY");
   const totalDays = toDateObj.diff(fromDateObj, "days");
@@ -23,15 +22,6 @@ function BooknowScreen() {
   const [guestEmail, setGuestEmail] = useState("");
   const [guestNumber, setGuestNumber] = useState("");
 
-  const setFixSidebar = () => {
-    if (window.scrollY >= 90) {
-      setFix(true);
-    } else {
-      setFix(false);
-    }
-  };
-
-  window.addEventListener("scroll", setFixSidebar);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +31,7 @@ function BooknowScreen() {
       try {
         const { data } = await axios.post(
           "https://renter-backend.onrender.com/api/hotels/gethotelbyid",
+          // "/api/hotels/gethotelbyid",
           {
             hotelid,
           }
@@ -159,7 +150,8 @@ function BooknowScreen() {
           </div>
         )}
       </div>
-      <div className={fix ? "payment fixed" : "payment"}>
+      <div className="right-sec-payment">
+      <div className="payment">
         {hotel && (
           <>
             <span
@@ -252,6 +244,7 @@ function BooknowScreen() {
         <button className="book" onClick={handleBook}>
           Book
         </button>
+      </div>
       </div>
     </div>
   );
