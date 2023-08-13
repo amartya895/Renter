@@ -15,16 +15,15 @@
 .gallery{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  padding: 20px;
 }
  .gallery img{
-    width: 400px;
-    height: fit-content;
+    width: 350px;
     margin: 20px 20px 20px 0;
     border-radius: 8px;
     align-items: center;
-    
     transition: all 0.3s ease;
 }
 .heading{
@@ -104,5 +103,9 @@ p{
     border-top-right-radius: 0;
     width: 100%;
     border-bottom: 1px solid rgb(133, 131, 128);
+  }
+  .gallery img{
+    height: 300px;
+
   }
 }
