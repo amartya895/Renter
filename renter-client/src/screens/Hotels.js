@@ -15,8 +15,8 @@ function Hotels() {
         console.log("Trying to fetch data");
         const data = (
           await axios.get(
-            // "https://renter-backend.onrender.com/api/hotels/getallhotels" //to use for deployed
-            "/api/hotels/getallhotels" //to use for local development
+            "https://renter-backend.onrender.com/api/hotels/getallhotels" //to use for deployed
+            // "/api/hotels/getallhotels" //to use for local development
           )
         ).data;
         console.log("Data fetched successfully");
