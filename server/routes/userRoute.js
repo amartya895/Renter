@@ -1,7 +1,16 @@
 const express = require("express");
+const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 const User = require("../modals/user");
+
+const maxAge = 3*24*60*60;
+
+const createToken = (id)=>{
+  jwt.sign({id} , 'amartya is cool' , {
+    expiresIn:maxAge
+  });
+}
 
 router.post("/signup", async (req, resp) => {
   const newUser = new User({
@@ -18,8 +27,10 @@ router.post("/signup", async (req, resp) => {
   });
 
   try {
-    const user = await newUser.save();
-    resp.send("User Registerd Successfully");
+    const user = await User.create(newUser);
+    const token = createToken(newUser._id);
+    resp.cookie('jwt' , token , {httpOnly:true , maxAge:maxAge*1000});
+    resp.status(201).json({userid : user._id});
   } catch (error) {
     return resp.status(400).json({ message: "something went wrong" });
   }
@@ -28,7 +39,7 @@ router.post("/signup", async (req, resp) => {
 router.post("/login", async (req, resp) => {
   const { email, password } = req.body; // array destructuring
   try {
-    const user = await User.findOne({ email, password });
+    const user = await User.login(email , password);
     if (user) {
       const temp = {
         name: user.name,

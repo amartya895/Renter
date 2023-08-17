@@ -60,9 +60,9 @@ function Navbar() {
                   <li>
                     <Link to="/profile">{user.name}</Link>
                   </li>
-                  <div class="nav-btn">
+                  <div className="nav-btn">
                     <Link to="/logout">
-                      <button classNameName="btn" onClick={handleLogout}>
+                      <button className="btn" onClick={handleLogout}>
                         Logout
                       </button>
                     </Link>
@@ -70,7 +70,7 @@ function Navbar() {
                 </>
               ) : (
                 <>
-                  <div class="nav-btn">
+                  <div className="nav-btn">
                     <Link>
                       <button onClick={() => setShowModal(true)}>Login</button>
                     </Link>
@@ -92,7 +92,7 @@ function Navbar() {
                 id="menu-bar-btn"
                 src={menu}
                 alt=""
-                srcset=""
+                srcSet=""
                 
               />
             </div>

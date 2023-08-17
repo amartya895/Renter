@@ -59,16 +59,18 @@ function Signup({ closeModalSignup }) {
         name,
         email,
         password,
-        cpassword,
+        
       };
 
       try {
         await axios.post(
           "https://renter-backend.onrender.com/api/users/signup",
+          // "/api/users/signup",
           userData
         );
         const result = await axios.post(
           "https://renter-backend.onrender.com/api/users/login",
+          // "/api/users/login",
           { email, password }
         );
 

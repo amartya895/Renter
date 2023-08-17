@@ -4,6 +4,7 @@ import "./card.css";
 import { Link } from "react-router-dom";
 import whiteFavourite from "../images/favourite.png";
 import redFavourite from "../images/favouriteSet.png";
+import axios from "axios";
 
 export const Card = ({
   name,
@@ -29,16 +30,40 @@ export const Card = ({
   const prevSlide = () => {
     setSlide(slide === 0 ? images.length - 1 : slide - 1);
   };
-  const [makeFavourite , setMakeFavourite] = useState(false);
+  const [makeFavourite, setMakeFavourite] = useState(false);
 
-  const handleFavourite = ()=>{
-    
-    setMakeFavourite(!makeFavourite)
-  }
+  const userData = JSON.parse(window.localStorage.getItem("currentUser"));
+
+  const handleFavourite = async () => {
+    setMakeFavourite(!makeFavourite);
+
+    if (!makeFavourite) {
+      console.log(userData._id);
+      console.log(id);
+      console.log("added in favourite");
+      try {
+         await axios.post("/api/favourites/makefavourite", {
+          userid: userData._id,
+          hotelid: id,
+        });
+
+        console.log("Data sent successfully");
+      } catch (error) {}
+    }
+    else{
+      console.log('remove from favourite');
+    }
+  };
   return (
     <div className="card-container">
       <div className="carousel">
-        <img className="favrtIcon" src={makeFavourite?(redFavourite):(whiteFavourite)} alt="" srcset="" onClick={handleFavourite} />
+        <img
+          className="favrtIcon"
+          src={makeFavourite ? redFavourite : whiteFavourite}
+          alt=""
+          srcSet=""
+          onClick={handleFavourite}
+        />
         <BsArrowLeftCircleFill
           onClick={prevSlide}
           className="arrow arrow-left"

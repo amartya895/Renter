@@ -8,6 +8,8 @@ const hotelsRoute = require("../server/routes/hotelRoute");
 const bookingRoute = require("../server/routes/bookingRoute");
 const travellerRoute = require("../server/routes/travellerRoute");
 
+const favouriteRoute = require("../server/routes/favouriteRoute");
+
 const dbconfig = require("./db.js");
 
 const app = express();
@@ -24,10 +26,12 @@ app.use(
 );
 
 app.use(express.json());
+
 app.use("/api/travellers", travellerRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/bookings", bookingRoute);
+app.use("/api/favourites" , favouriteRoute);
 
 app.listen(port, () => {
   console.log(`server is running on port ${port} `);
