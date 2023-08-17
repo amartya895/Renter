@@ -42,7 +42,7 @@ export const Card = ({
       console.log(id);
       console.log("added in favourite");
       try {
-         await axios.post("/api/favourites/makefavourite", {
+         await axios.post("https://renter-backend.onrender.com/api/favourites/makefavourite", {
           userid: userData._id,
           hotelid: id,
         });
