@@ -1,86 +1,75 @@
 import React from "react";
 import "./footer.css";
-import "@fortawesome/fontawesome-free/css/all.css";
-import { FaHotel } from "react-icons/fa";
+import help from "../images/customer-support.png";
+import logo from "../images/renterLogo.png";
+import appstore from "../images/appstore.png";
+import playstore from "../images/playstore.png";
 
 function Footer() {
   return (
-    <>
-   <hr />
-    <footer className="footer">
-        
-      <div className="footer-container">
-        <div className="footer-column">
-          <div className="footer-logo">
-          <h2 className="logo"><FaHotel/>Renter</h2>
-            <p>Your Ultimate Vacation Rental Partner</p>
+    <footer>
+      <div className="footer-details">
+        <div className="footer-head">
+          <div className="logo-sec">
+          <img src={logo} alt="" />
+          <div className="logo-wr">
+          <h1>Renter</h1>
+          <p>Peoples Trust</p>
           </div>
-          <div className="footer-social">
-            <ul>
-              <li>
-                <a href="/">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
+          </div>
+          
+          <p>
+            <i class="fa fa-envelope"></i>
+            amartya@test.com
+          </p>
+        </div>
+        <div className="footer-text">
+          <div className="knowmore">
+            <p>Know More</p>
+            <div className="ul-list">
+              <ul>
+                <li>About Us</li>
+                <li>PNR Status</li>
+                <li>Seat Availability</li>
+                <li>Running Status</li>
+              </ul>
+              <ul>
+                <li>Fare Calculator</li>
+                <li>Time Table</li>
+                <li>Station Details</li>
+                <li>Blogs</li>
+              </ul>
+              <ul>
+                <li>Privacy Policy</li>
+                <li>Terms and Conditions</li>
+              </ul>
+            </div>
+          </div>
+          <div className="d-app">
+            <p>Experience our app</p>
+            <div className="av-apps">
+                <img src={appstore} alt="" />
+                <img src={playstore} alt="" />
+            </div>
           </div>
         </div>
-        <div className="footer-column">
-          <h3>Discover</h3>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/destinations">Destinations</a>
-            </li>
-            <li>
-              <a href="/about">About Us</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Information</h3>
-          <ul>
-            <li>
-              <a href="/privacy-policy">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="/terms-of-service">Terms of Service</a>
-            </li>
-            <li>
-              <a href="/faq">FAQ</a>
-            </li>
-          </ul>
+        <div className="footer-bottom">
+            <h3>Connect With Us</h3>
+            <div className="social-icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-youtube"></i>
+            <i class="fa fa-linkedin"></i>
+            </div>
+            <p>© Copy right 2014-2022, Stark Enterprises Private Limited </p>
         </div>
       </div>
-      <hr />
-      <div className="footer-bottom">
-      <h3 className="logo"><FaHotel/>Renter</h3>
-        <p>
-          &copy; {new Date().getFullYear()} Renter, a <b>Wilbur Labs</b> company.&nbsp;<b>Terms Privacy</b>
-        </p>
+      <div className="help-btn">
+        <img src={help} alt="" />
+        <p>Help</p>
       </div>
     </footer>
-    </>
   );
 }
 
