@@ -4,10 +4,14 @@ import "./login.css";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import {BeatLoader} from 'react-spinners'
+
 
 function Login({ closeModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loader , setLoader] = useState(false);
+ 
   const [errors, setErrors] = useState({});
   const user = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -43,22 +47,29 @@ function Login({ closeModal }) {
 
   const handleLogin = async () => {
     if (validateForm()) {
+      
       const userData = {
         email,
         password,
       };
 
       try {
+        setLoader(true);
         const result = await axios.post(
           "https://renter-backend.onrender.com/api/users/login",
           // "/api/users/login",
           userData
         );
 
+        setLoader(false);
+
         localStorage.setItem("currentUser", JSON.stringify(result.data));
         window.location.href = "/";
+
+       
       } catch (error) {
         console.log(error);
+        setLoader(false)
       }
     }
   };
@@ -103,7 +114,7 @@ function Login({ closeModal }) {
               </div>
             </form>
             <button className="login-button" onClick={handleLogin}>
-              Sign in
+              {loader ? <BeatLoader color="#dfe6e5"/> : 'Login'}
             </button>
             <div className="flex items-center pt-4 space-x-1 social-accounts">
               <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
@@ -120,7 +131,7 @@ function Login({ closeModal }) {
             <p className="sign-up login-link">
               Don't have an account?
               <a rel="noopener noreferrer" href="/" className="hover:underline">
-                Sign up
+                Register
               </a>
             </p>
           </div>

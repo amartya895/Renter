@@ -4,6 +4,7 @@ import "./signup.css";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import {BeatLoader} from 'react-spinners'
 
 function Signup({ closeModalSignup }) {
   const [name, setName] = useState("");
@@ -11,6 +12,7 @@ function Signup({ closeModalSignup }) {
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [loader , setLoader] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("currentUser"));
   useEffect(() => {
@@ -63,6 +65,7 @@ function Signup({ closeModalSignup }) {
       };
 
       try {
+        setLoader(true);
         await axios.post(
           "https://renter-backend.onrender.com/api/users/signup",
           // "/api/users/signup",
@@ -74,11 +77,14 @@ function Signup({ closeModalSignup }) {
           { email, password }
         );
 
+        setLoader(false);
+
         localStorage.setItem("currentUser", JSON.stringify(result.data));
         window.location.href = "/";
         console.log(userData);
       } catch (error) {
         console.log(error);
+        setLoader(false);
       }
     }
   };
@@ -151,7 +157,7 @@ function Signup({ closeModalSignup }) {
             onClick={handleSignup}
             className="signup-button"
           >
-            Sign up
+           {loader ? <BeatLoader color="#dfe6e5"/> : 'Register'}
           </button>
           <div className="flex items-center pt-4 space-x-1 social-accounts">
             <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>

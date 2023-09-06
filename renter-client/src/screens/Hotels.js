@@ -3,15 +3,19 @@ import "./hotel.css";
 import { Card } from "../components/Card";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Loader from "../components/Loader";
 
 function Hotels() {
   const [hotels, setHotels] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { place, fromdate, todate } = useParams();
 
+  const [loader , setLoader] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoader(true)
         console.log("Trying to fetch data");
         const data = (
           await axios.get(
@@ -22,6 +26,7 @@ function Hotels() {
         console.log("Data fetched successfully");
         console.log(data);
         setHotels(data);
+        setLoader(false);
       } catch (error) {
         console.log("Something went wrong");
       }
@@ -49,7 +54,7 @@ function Hotels() {
       <hr />
       <div className="searchHotel">
         <h2>
-          {searchedHotels.length}+ stays in {place || "anywhere"} on date from{" "}
+          {  searchedHotels.length}+ stays in {place || "anywhere"} on date from{" "}
           {fromdate || "any"} to {todate || "any"}
         </h2>
         <input
@@ -61,7 +66,7 @@ function Hotels() {
       </div>
 
       <div className="main-card">
-        {searchedHotels.map((hotel, key) => (
+         { loader ?<Loader/> :searchedHotels.map((hotel, key) => (
           <Card
             key={key}
             name={hotel.name}

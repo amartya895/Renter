@@ -25,6 +25,7 @@ import spn2 from "../images/spn2.svg";
 import spn3 from "../images/spn3.svg";
 import spn4 from "../images/spn4.svg";
 import spn5 from "../images/spn5.svg";
+import Loader from "../components/Loader";
 
 const { RangePicker } = DatePicker;
 
@@ -145,6 +146,7 @@ function HomeScreen() {
   });
 
 const [place , setPlace ] = useState('');
+const [loading, setLoading] = useState(false);
 
   
 
@@ -160,6 +162,7 @@ const [place , setPlace ] = useState('');
 
 
   return (
+
     <div className="mainContainer">
       <div className="main">
         <h1>Find your Perfect vacation rental</h1>
