@@ -29,14 +29,14 @@ function Footer() {
             <div className="ul-list">
               <ul>
                 <li>About Us</li>
-                <li>PNR Status</li>
-                <li>Seat Availability</li>
-                <li>Running Status</li>
+                <li>Offer Status</li>
+                <li>Room Availability</li>
+                <li>Tour Offers</li>
               </ul>
               <ul>
-                <li>Fare Calculator</li>
-                <li>Time Table</li>
-                <li>Station Details</li>
+                <li>Package Prices</li>
+                <li>Reviews</li>
+                <li>Hotel Details</li>
                 <li>Blogs</li>
               </ul>
               <ul>
