@@ -1,13 +1,16 @@
 const express = require("express");
 const jwt = require('jsonwebtoken');
 const router = express.Router();
+require('dotenv').config();
+
 
 const User = require("../modals/user");
 
 const maxAge = 3*24*60*60;
+const SECRET_KEY= process.env.SECRET_KEY;
 
 const createToken = (id)=>{
-  jwt.sign({id} , 'amartya is cool' , {
+  jwt.sign({id} , `${SECRET_KEY}`, {
     expiresIn:maxAge
   });
 }

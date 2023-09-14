@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const mongoUrl = 'mongodb+srv://amartyasen:amartya@cluster0.tlqtekf.mongodb.net/mern-renter';
+require('dotenv').config();
+const mongoUrl = `mongodb+srv://amartyasen:${process.env.MONGODB_PASSWORD}@cluster0.tlqtekf.mongodb.net/mern-renter`;
 
 mongoose.connect(mongoUrl , {useUnifiedTopology:true, useNewUrlParser:true});
 
