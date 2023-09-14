@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import {BeatLoader} from 'react-spinners'
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 
 function Login({ closeModal }) {
@@ -56,7 +57,7 @@ function Login({ closeModal }) {
       try {
         setLoader(true);
         const result = await axios.post(
-          "https://renter-backend.onrender.com/api/users/login",
+         RENTER_API_ENDPOINT+ "/users/login",
           // "/api/users/login",
           userData
         );

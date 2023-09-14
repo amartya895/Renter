@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import {BeatLoader} from 'react-spinners'
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 function Signup({ closeModalSignup }) {
   const [name, setName] = useState("");
@@ -67,12 +68,12 @@ function Signup({ closeModalSignup }) {
       try {
         setLoader(true);
         await axios.post(
-          "https://renter-backend.onrender.com/api/users/signup",
+          RENTER_API_ENDPOINT+"/users/signup",
           // "/api/users/signup",
           userData
         );
         const result = await axios.post(
-          "https://renter-backend.onrender.com/api/users/login",
+          RENTER_API_ENDPOINT+"/users/login",
           // "/api/users/login",
           { email, password }
         );

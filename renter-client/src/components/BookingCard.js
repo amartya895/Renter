@@ -8,6 +8,7 @@ import { GiHotMeal } from "react-icons/gi";
 import moment from "moment";
 import axios from "axios";
 import swal from "sweetalert2";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 function BookingCard({
   guestname,
@@ -28,7 +29,7 @@ function BookingCard({
 
     try {
       const result = await axios.post(
-        "https://renter-backend.onrender.com/api/bookings/cancelbooking",
+        RENTER_API_ENDPOINT+"/bookings/cancelbooking",
         {
           hotelId: hotelid,
           bookingId: bookingid,

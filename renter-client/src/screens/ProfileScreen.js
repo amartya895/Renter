@@ -7,6 +7,7 @@ import { MdOutlineGroup } from "react-icons/md";
 import AddTravellerModal from "../components/AddTravellerModal";
 import axios from "axios";
 import EditprofileModal from "../components/EditprofileModal";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 function ProfileScreen() {
   const userData = JSON.parse(localStorage.getItem("currentUser"));
@@ -22,7 +23,7 @@ function ProfileScreen() {
     const fetchData = async () => {
       const travellerData = (
         await axios.post(
-          "https://renter-backend.onrender.com/api/travellers/gettraveller",
+          RENTER_API_ENDPOINT+"/travellers/gettraveller",
           // "/api/travellers/gettraveller",
           {
             userId

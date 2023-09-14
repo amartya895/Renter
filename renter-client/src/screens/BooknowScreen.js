@@ -9,6 +9,7 @@ import { PiTelevisionLight } from "react-icons/pi";
 import { AiOutlineCar } from "react-icons/ai";
 import moment from "moment";
 import swal from "sweetalert2";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 function BooknowScreen() {
   const { hotelid, fromdate, todate } = useParams();
@@ -30,7 +31,7 @@ function BooknowScreen() {
       }
       try {
         const { data } = await axios.post(
-          "https://renter-backend.onrender.com/api/hotels/gethotelbyid",
+          RENTER_API_ENDPOINT+"/hotels/gethotelbyid",
           // "/api/hotels/gethotelbyid",
           {
             hotelid,

@@ -4,6 +4,8 @@ import { Card } from "../components/Card";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
+
 
 function Hotels() {
   const [hotels, setHotels] = useState([]);
@@ -19,8 +21,9 @@ function Hotels() {
         console.log("Trying to fetch data");
         const data = (
           await axios.get(
-            "https://renter-backend.onrender.com/api/hotels/getallhotels" //to use for deployed
+            RENTER_API_ENDPOINT+"/hotels/getallhotels" //to use for deployed
             // "/api/hotels/getallhotels" //to use for local development
+            // RENTER_API_ENDPOINT_LOCAL
           )
         ).data;
         console.log("Data fetched successfully");

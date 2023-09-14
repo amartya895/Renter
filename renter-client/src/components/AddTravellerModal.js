@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./addTravellerModal.css";
 import axios from "axios";
 import swal from "sweetalert2";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 const AddTravellerModal = ({ closeModal }) => {
   const [travellerName, setTravellerName] = useState("");
   const [travellerEmail, setTravellerEmail] = useState("");
@@ -32,7 +33,7 @@ const AddTravellerModal = ({ closeModal }) => {
     console.log(data);
     try {
       const res = await axios.post(
-        "https://renter-backend.onrender.com/api/travellers/addtraveller",
+        RENTER_API_ENDPOINT+"/travellers/addtraveller",
         // "/api/travellers/addtraveller",
         data
       )

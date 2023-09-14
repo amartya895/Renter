@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Card } from "../components/Card";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 function Favourite() {
   const userData = JSON.parse(window.localStorage.getItem("currentUser"));
@@ -11,7 +12,7 @@ function Favourite() {
     const fetchFavouriteHotel = async () => {
       try {
         const response = await axios.post(
-          "https://renter-backend.onrender.com/api/favourites/getfavouritehotel",
+         RENTER_API_ENDPOINT+ "/favourites/getfavouritehotel",
           {
             userid: userData._id,
           }

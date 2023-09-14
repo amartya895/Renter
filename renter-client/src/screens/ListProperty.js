@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./listProperty.css";
 import swal from "sweetalert2";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 function ListProperty() {
   const [name, setName] = useState("");
   const [type, setType] = useState("");
@@ -40,7 +41,7 @@ function ListProperty() {
       console.log("data sending started");
       await (
         await axios.post(
-          "https://renter-backend.onrender.com/api/hotels/registerhotel",
+         RENTER_API_ENDPOINT+ "/hotels/registerhotel",
           hotelData
         )
       ).data;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BookingCard from "../components/BookingCard";
 import axios from "axios";
 import "./bookings.css";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 function Bookings() {
   const user = JSON.parse(localStorage.getItem("currentUser"));
@@ -16,7 +17,7 @@ function Bookings() {
       }
       try {
         const response = await axios.post(
-          "https://renter-backend.onrender.com/api/bookings/getbooking",
+          RENTER_API_ENDPOINT+"/bookings/getbooking",
           // "/api/bookings/getbooking",
           {
             userid,

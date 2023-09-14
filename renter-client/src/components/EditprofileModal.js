@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 function EditprofileModal({ closeModal }) {
   const [userName, setUserName] = useState("");
@@ -35,7 +36,7 @@ function EditprofileModal({ closeModal }) {
     try {
       console.log("Try sending the data");
       const res = await axios.post(
-        "https://renter-backend.onrender.com/api/users/updateuser",
+        RENTER_API_ENDPOINT+"/users/updateuser",
         // "/api/users/updateuser",
       
       data);

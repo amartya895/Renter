@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import whiteFavourite from "../images/favourite.png";
 import redFavourite from "../images/favouriteSet.png";
 import axios from "axios";
+import { RENTER_API_ENDPOINT } from "../utils/constants";
 
 export const Card = ({
   name,
@@ -42,7 +43,7 @@ export const Card = ({
       console.log(id);
       console.log("added in favourite");
       try {
-         await axios.post("https://renter-backend.onrender.com/api/favourites/makefavourite", {
+         await axios.post(RENTER_API_ENDPOINT+"/favourites/makefavourite", {
           userid: userData._id,
           hotelid: id,
         });
