@@ -39,10 +39,10 @@ function Navbar() {
 
       <nav>
         <div className="navbar">
-          <div className="logo">
+          <Link to="/" className="logo">
             <img src={logo} alt="" />
             <p>Renter</p>
-          </div>
+          </Link>
 
           <div className="nav-menu-bg">
             <ul className="nav-menu">

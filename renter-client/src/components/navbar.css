@@ -1,55 +1,3 @@
-/* li{
-    
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
-.navbar{
-    height: 12vh;
-    line-height: 10vh;
-    padding-top:10px ;
-   
-    
-}
-.logo{
-    font-size: 40px;
-    color: rgba(0, 0, 0, 0.797);
-
-}
-.nav-links{
-    display: flex;
-    justify-content:flex-end;
-    width: 75%;
-   
-}
-.container{
-    max-width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.list-property{
-    border: 1px solid rgb(91, 89, 89);
-}
-.nav-links li{
-    color: black;
-    font-size: 20px;
-    padding: 0 13px;
-    margin: 0 13px;
-    cursor: pointer;
-}
-
-.reg-property{
-   
-    font-size: 23px;
-    margin: 0 13px;
-    padding: 0 13px;
-    
-} */
-
-
 *{
     margin: 0;
     padding: 0;
@@ -76,7 +24,7 @@ a{
     align-items: center;
     font-size: 30px;
     font-weight: 900;
-   
+    text-decoration: none;
 
 }
 .logo p{
